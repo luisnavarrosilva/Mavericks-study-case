@@ -1,0 +1,23 @@
+package com.springboot.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.springboot.model.Product;
+import com.springboot.repository.ProductRepository;
+
+@RestController
+public class ProductController {
+
+	@Autowired
+	private ProductRepository productRepository;
+	
+	//add a new product to the db
+	@PostMapping("/product")
+	public Product addProduct(@RequestBody Product product) {
+		return productRepository.save(product);
+	}
+	
+}
