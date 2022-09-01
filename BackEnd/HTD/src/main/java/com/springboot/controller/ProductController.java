@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.model.Product;
-import com.springboot.model.User;
 import com.springboot.repository.ProductRepository;
 
 @RestController
