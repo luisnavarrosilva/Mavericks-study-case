@@ -11,8 +11,8 @@ export default class navBar extends Component {
         <Container>
           <Navbar.Brand href="#home">Products</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Orders</Nav.Link>
-            <Nav.Link href="#features">User info</Nav.Link>
+            <Nav.Link href="/Orders">Orders</Nav.Link>
+            <Nav.Link href="features">User info</Nav.Link>
             <Nav.Link href="#pricing">Selected Products: </Nav.Link>
           </Nav>
         </Container>

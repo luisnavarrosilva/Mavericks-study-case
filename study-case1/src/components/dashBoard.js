@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Cards from "./cards";
 import NavBar from "./navBar";
-import "./../App.css"
+import "./../App.css";
 
 export default class dashBoard extends Component {
   render() {

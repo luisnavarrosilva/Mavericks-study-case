@@ -86,3 +86,9 @@ body {
   .login-box a:hover {
     color: #ffffff;
   }
+
+  button{
+    width: 100%;
+    background-color: transparent;
+    border-color: transparent;
+  }
