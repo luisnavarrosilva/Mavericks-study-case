@@ -1,11 +1,13 @@
-import Login from "./components/login";
-import Forgot from './components/forgot';
-import Signup from "./components/signup";
-import ReactDOM from "react-dom/client";
+import Login from "./components/login.js";
+import Forgot from './components/forgot.js';
+import Signup from "./components/signup.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DashBoard from "./components/dashBoard";
 import Orders from "./components/orders";
 function App() {
+
+  
+  
   return (
     <div>
       <BrowserRouter>

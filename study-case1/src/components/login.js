@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
-import "./login.css"
+import "./login.css";
+import React, { Component } from 'react';
 
 export default class login extends Component {
-  
-
   render() {
     return (
     <body>
       <div className="login-box">
       <h1>Login</h1>
       <form action="">
-        <label for="username">Username or email</label>
+        <label htmlFor="username">Username or email</label>
         <input
           type="text"
           name=""
@@ -18,10 +16,10 @@ export default class login extends Component {
           placeholder="Username/email"
         />
 
-        <label for="Password">Password</label>
-        <input type="password" name="" id="" placeholder="Password" />
+        <label htmlFor="Password" id="id1">Password</label>
+        <input type="password" name="" id="psw" placeholder="Password" />
 
-        <a href='/DashBoard'><input type="sumbit" name="" id="" value="Login"></input></a>
+        <a href='/DashBoard'><input type="sumbit" name="" id="input" value="Login"></input></a>
         
 
         <a href="/Forgot">Forgot password? clic here</a><br />

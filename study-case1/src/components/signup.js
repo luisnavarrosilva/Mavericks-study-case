@@ -27,7 +27,7 @@ export default class signup extends Component {
   render() {
     return (
         <body>
-        <div className="login-box">
+        <div className="login-box-sg">
         <h1>Please insert your data</h1>
         <form action="">
           <label for="username">email</label>

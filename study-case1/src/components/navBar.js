@@ -9,7 +9,7 @@ export default class navBar extends Component {
         <>
       <Navbar bg="primary" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Products</Navbar.Brand>
+          <Navbar.Brand href="/Dashboard">Products</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/Orders">Orders</Nav.Link>
             <Nav.Link href="features">User info</Nav.Link>

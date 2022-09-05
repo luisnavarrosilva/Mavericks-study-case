@@ -5,7 +5,7 @@ export default class Forgot extends Component {
   render() {
     return (
         <body>
-        <div class="login-box">
+        <div class="login-box-f">
         <h1>Forgotten password</h1>
         <form action="">
           <label for="username">e-mail</label>

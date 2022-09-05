@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
-import com.springboot.Services.EmailSenderService;
+
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class HtdApplication {

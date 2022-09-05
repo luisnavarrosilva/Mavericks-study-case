@@ -2,9 +2,13 @@ import React, { Component } from 'react'
 import Cards from "./cards";
 import NavBar from "./navBar";
 import "./../App.css";
+import axios from 'axios';
 
 export default class dashBoard extends Component {
   render() {
+    axios.get('localhost:1234/product').then(resp => {
+
+    console.log(resp.data);});
     return (
         <div>
         <NavBar></NavBar>
