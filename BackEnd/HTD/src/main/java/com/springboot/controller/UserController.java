@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springboot.model.User;
 import com.springboot.repository.UserRepository;
 
+@CrossOrigin
 @RestController
 public class UserController {
 

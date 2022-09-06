@@ -5,9 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DashBoard from "./components/dashBoard";
 import Orders from "./components/orders";
 function App() {
-
-  
-  
   return (
     <div>
       <BrowserRouter>
