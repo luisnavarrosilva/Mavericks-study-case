@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 export default class cards extends Component {
   constructor(props) {
     super(props);
@@ -8,16 +9,21 @@ export default class cards extends Component {
   }
   render() {
     return (
-        <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="https://thumbs.dreamstime.com/b/natural-products-hair-concept-two-size-green-plastic-bottle-blank-label-contain-herbal-bergamot-shampoo-decorate-137183280.jpg" />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+        <Card.Title>{this.props.product.name}</Card.Title>
         <Card.Text>
+        {this.props.product.description}
         </Card.Text>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
-        </Card>
+      <ListGroup className="list-group-flush">
+        <ListGroup.Item>Stock of {this.props.product.stock}</ListGroup.Item>
+      </ListGroup>
+      <Card.Body>
+        <Card.Link href="#">Add to order</Card.Link>
+      </Card.Body>
+    </Card>
     )
   }
 }

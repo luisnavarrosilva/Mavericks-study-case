@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import "./navBar.css"
 import Nav from 'react-bootstrap/Nav';
 export default class navBar extends Component {
   render() {
     return (
         <>
-      <Navbar bg="primary" variant="dark">
-        <Container>
+      <Navbar bg="dark" variant="dark">
+      <img src='https://www.mavs.com/wp-content/themes/mavs/images/news-bg-horse.png' className="logo"></img>
+        <Container className='cont'>
           <Navbar.Brand href="/Dashboard">Products</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/Orders">Orders</Nav.Link>
