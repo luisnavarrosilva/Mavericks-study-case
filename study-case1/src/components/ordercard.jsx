@@ -18,7 +18,11 @@ export default class
         <Card.Text>
           {this.props.order.details}
         </Card.Text>
-        <Button variant="primary">Complete order</Button>
+        {this.props.order.status=="completed"?(
+          <Button variant="success">Completed order</Button>
+        ):(
+          <Button variant="primary">Complete order</Button>
+        )} 
         </Card.Body>
         </Card>
       </div>
