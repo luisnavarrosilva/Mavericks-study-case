@@ -21,24 +21,32 @@ public class ProductController {
 	@Autowired
 	private ProductRepository productRepository;
 	
+    //----------------------------------------------------------------------------------
 	//add a new product to the db
 	@PostMapping("/product")
-	public Product addProduct(@RequestBody Product product) {
-		return productRepository.save(product);
+	public String addProduct(@RequestBody Product product) {
+		productRepository.save(product);
+		return "Product added succesfully";
 	}
+	
+    //----------------------------------------------------------------------------------
 	//fetch all product from the db
 	@GetMapping("/product")
 	public List<Product> fetchAllProducts(){
 		return productRepository.findAll();
 	}
+	
+    //----------------------------------------------------------------------------------
 	//fetch available products from the db
 	@GetMapping("/product/available")
 	public List<Product> fetchAvailableProducts(){
 		return productRepository.getByStatus("available");
 	}
+	
+    //----------------------------------------------------------------------------------
 	//update product based on name
 		@PutMapping("product/{name}")
-		public Product updateProduct(@PathVariable String name,@RequestBody Product newProduct) {
+		public String updateProduct(@PathVariable String name,@RequestBody Product newProduct) {
 			Product productDB=productRepository.getByName(name);
 			
 			productDB.setName(newProduct.getName());
@@ -46,8 +54,9 @@ public class ProductController {
 			productDB.setPrice(newProduct.getPrice());
 			productDB.setStatus(newProduct.getStatus());
 			productDB.setStock(newProduct.getStock());
-
+			productDB.setImage(newProduct.getImage());
+			productRepository.save(productDB);
 			
-			return productRepository.save(productDB);
+			return "Product updated succesfully";
 		}
 }
