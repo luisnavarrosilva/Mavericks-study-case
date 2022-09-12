@@ -15,7 +15,7 @@ public class Orders {
 	private String details;
 	private String status;
 	@OneToOne
-	private User user;
+	private UserInfo user;
 	public Long getId() {
 		return id;
 	}
@@ -34,10 +34,10 @@ public class Orders {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public User getUser() {
+	public UserInfo getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(UserInfo user) {
 		this.user = user;
 	}
 	

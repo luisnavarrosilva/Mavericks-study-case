@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.springboot.model.Orders;
 import com.springboot.model.Product;
-import com.springboot.model.User;
+import com.springboot.model.UserInfo;
 
 public interface ProductRepository extends JpaRepository<Product, Long>{
 
