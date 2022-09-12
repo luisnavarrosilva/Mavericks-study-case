@@ -1,4 +1,4 @@
-import Login from "./components/login.js";
+import Login from "./components/Login2";
 import Forgot from './components/forgot.js';
 import Signup from "./components/signup.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,11 +11,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login/>}/>
-          <Route path="/DashBoard" element={<DashBoard/>}/>
+          <Route path="/DashBoard/:name" element={<DashBoard/>}/>
           <Route path="/Forgot" element={<Forgot/>}/>
           <Route path="/Signup" element={<Signup/>}/>
-          <Route path="/Orders" element={<Orders/>}/>
-          <Route path="/Userinfo" element={<UserInfo/>}/>
+          <Route path="/Orders/:name" element={<Orders/>}/>
+          <Route path="/Userinfo/:name" element={<UserInfo/>}/>
         </Routes>
       </BrowserRouter>
     </div>

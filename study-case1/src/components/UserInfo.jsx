@@ -5,8 +5,11 @@ import Card from 'react-bootstrap/Card';
 import { getuser } from '../functions/Register';
 import { useState ,useEffect} from 'react';
 import "./userinfo.css"
-
+import { useLocation } from "react-router-dom";
 const UserInfo= () =>  {
+  var location = useLocation();
+  var location = location.pathname.split("/");
+  var location = location[2];
   const [users, setUsers] = useState(null)
     useEffect(()=> {
       getuser(setUsers)
@@ -14,7 +17,7 @@ const UserInfo= () =>  {
   return (
     <body>
     <div className='container-p'>
-    <NavBar/>
+    <NavBar location={location}></NavBar>
     {users!=null?(
       <Card>
       <Card.Img variant="top" src="https://thecatapi.com/api/images/get?"/>

@@ -4,7 +4,11 @@ import Card from "./ordercard";
 import { getorders } from '../functions/Register';
 import { useState } from 'react';
 import "./dashboard.css"
+import { useLocation } from "react-router-dom";
 const Orders = () => {
+  var location = useLocation();
+  var location = location.pathname.split("/");
+  var location = location[2];
 const [orders, setOrders] = useState(null)
     useEffect(()=> {
     getorders(setOrders)
@@ -12,7 +16,7 @@ const [orders, setOrders] = useState(null)
   return (
     <body>
     <div className='container-p'>
-        <NavBar></NavBar>
+      <NavBar location={location}></NavBar>
         {orders!=null?(
       orders.map(order => (
         <div>

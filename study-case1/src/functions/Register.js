@@ -19,11 +19,20 @@ const getorders = async(state) => {
     state(peticion.data);
 }
 const getuser = async(state) => {
-    const peticion = await axios.get("http://localhost:1234/user/1");
+    const peticion = await axios.get("http://localhost:1234/user");
+    state(peticion);
+    
+}
+const getlogin = async(state,name) => {
+    const cadena = "http://localhost:1234/user/" + name;
+    const peticion = await axios.get(cadena);
     state(peticion);
 }
+const product = (product) => {
+    console.log(product);
+}
 export{
-    getproducts
+    getproducts, getlogin, product
 }
 export{
     getorders

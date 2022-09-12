@@ -1,6 +1,8 @@
 import "./login.css";
 import React, { Component } from 'react';
 
+
+
 export default class login extends Component {
   render() {
     return (
@@ -19,7 +21,8 @@ export default class login extends Component {
         <label htmlFor="Password" id="id1">Password</label>
         <input type="password" name="" id="psw" placeholder="Password" />
 
-        <a href='/DashBoard'><input type="sumbit" name="" id="input" value="Login"></input></a>
+        <button  type='button'><a href='/DashBoard'><input type="sumbit" name="" id="input" value="Login"></input></a></button>
+        
         
 
         <a href="/Forgot">Forgot password? clic here</a><br />

@@ -1,3 +1,4 @@
+import { click } from '@testing-library/user-event/dist/click';
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -21,7 +22,7 @@ export default class cards extends Component {
         <ListGroup.Item>Stock of {this.props.product.stock}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-        <Card.Link href="#">Add to order</Card.Link>
+      <Card.Link href={`/add/${this.props.product.id}`}>Another Link</Card.Link>
       </Card.Body>
     </Card>
     )
