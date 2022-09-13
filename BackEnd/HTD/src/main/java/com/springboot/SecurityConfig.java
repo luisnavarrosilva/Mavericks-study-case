@@ -47,26 +47,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.httpBasic()
 		.and()
 		.authorizeRequests()
-		.antMatchers(HttpMethod.GET,"/login/{user}").authenticated()
-		.anyRequest().permitAll()
+		.antMatchers(HttpMethod.POST,"/user").permitAll()
+		.anyRequest().authenticated()
 		.and()
 		.csrf().disable();
-		
-		/**
-		 * http.httpBasic()
-		.and()
-		.authorizeRequests()
-		.antMatchers(HttpMethod.GET,"/hello").permitAll()
-		.antMatchers(HttpMethod.POST,"/user/register").permitAll()
-		.antMatchers(HttpMethod.GET,"/user/login").authenticated()
-		.antMatchers(HttpMethod.GET, "/user/question/{username}").permitAll()
-		.antMatchers(HttpMethod.GET, "/user/answer/{username}/{answer}").permitAll()
-		.antMatchers(HttpMethod.POST, "/vendor/add}").permitAll()
-		.antMatchers(HttpMethod.GET, "/vendor").permitAll()
-		.antMatchers(HttpMethod.GET, "/vendor/{id}").permitAll()
-		.and()
-		.csrf().disable();
-		 * **/
 	}
 	
 }

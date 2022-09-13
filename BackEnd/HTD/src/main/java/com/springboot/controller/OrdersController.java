@@ -22,11 +22,11 @@ import com.springboot.repository.UserRepository;
 public class OrdersController {
 
 	@Autowired
-	OrdersRepository ordersRepository;
+	private OrdersRepository ordersRepository;
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 	@Autowired
-	EmailSenderService senderService;
+	private EmailSenderService senderService;
 	
     //----------------------------------------------------------------------------------
 	//Add a single order to the db

@@ -22,11 +22,11 @@ import com.springboot.repository.ProductRepository;
 public class ProductOrderController {
 
 	@Autowired
-	ProductRepository productRepository;
+	private ProductRepository productRepository;
 	@Autowired
-	OrdersRepository ordersRepository;
+	private OrdersRepository ordersRepository;
 	@Autowired
-	ProductOrderRepository productOrderRepository;
+	private ProductOrderRepository productOrderRepository;
 	
 	//----------------------------------------------------------------------------------
 	//Add a product to an order
