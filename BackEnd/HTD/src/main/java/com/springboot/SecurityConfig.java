@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.springboot.Services.MyUserDetailsService;
+import com.springboot.service.MyUserDetailsService;
 
 @SuppressWarnings("deprecation")
 @Configuration
@@ -24,12 +24,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Bean
 	public PasswordEncoder getPasswordEncoder() {
-		PasswordEncoder passEncoder = new BCryptPasswordEncoder();
-		return passEncoder;
+		return new BCryptPasswordEncoder();
 	}
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		
 		//The data comes from the db
 		auth.authenticationProvider(myAuthManager());
 		

@@ -1,15 +1,7 @@
-package com.springboot.model;
+package com.springboot.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class ProductDto {
 
-@Entity
-public class Product {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String description;
@@ -17,13 +9,6 @@ public class Product {
 	private Double price;
 	private String image;
 	private int stock;
-	
-	public String getImage() {
-		return image;
-	}
-	public void setImage(String image) {
-		this.image = image;
-	}
 	public Long getId() {
 		return id;
 	}
@@ -54,12 +39,17 @@ public class Product {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	public int getStock() {
 		return stock;
 	}
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	
 	
 }

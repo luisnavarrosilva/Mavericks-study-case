@@ -1,17 +1,7 @@
-package com.springboot.model;
+package com.springboot.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
-public class UserInfo {
-
-	@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY) 
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+public class UserDto {
+	
 	private String name;
 	private String lastName;
 	private String email; 
@@ -21,18 +11,6 @@ public class UserInfo {
 	private String adress;
 	private String accountType;
 	
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
@@ -44,6 +22,12 @@ public class UserInfo {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getUserName() {
 		return userName;
@@ -75,5 +59,7 @@ public class UserInfo {
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
+	
+	
 	
 }

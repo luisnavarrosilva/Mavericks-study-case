@@ -9,47 +9,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.springboot.model.Orders;
 import com.springboot.model.Product;
 import com.springboot.model.ProductOrder;
-import com.springboot.repository.OrdersRepository;
-import com.springboot.repository.ProductOrderRepository;
-import com.springboot.repository.ProductRepository;
+import com.springboot.service.OrderService;
 
 @CrossOrigin
 @RestController
 public class ProductOrderController {
 
 	@Autowired
-	private ProductRepository productRepository;
-	@Autowired
-	private OrdersRepository ordersRepository;
-	@Autowired
-	private ProductOrderRepository productOrderRepository;
+	private OrderService orderService;
 	
-	//----------------------------------------------------------------------------------
-	//Add a product to an order
+	//-------------Add a product to an order------------------------------------
 	@PostMapping("/order/product/{oid}/{pid}")
 	public ProductOrder addProductToOrder(@RequestBody ProductOrder productOrder,
 			@PathVariable("oid") Long oid,
 			@PathVariable("pid") Long pid) { 
-		//fetch order from db
-		Orders order=ordersRepository.getReferenceById(oid);
-		//fetch product from db
-		Product product=productRepository.getReferenceById(pid);
-		
-		//set order and product to the db
-		productOrder.setOrder(order);
-		productOrder.setProduct(product);
-		
-		return productOrderRepository.save(productOrder);
+		return orderService.addProductToOrder(productOrder, oid, pid);
 	}
 	
-	//----------------------------------------------------------------------------------
-	//fetch all products based on order id
+	//------------fetch all products based on order id-----------------------------------
 	@GetMapping("/order/product/{oid}")
 	public List<Product> getProductsByOrderId(@PathVariable("oid") Long oid ){
-		return productOrderRepository.getProductById(oid); 
+		return orderService.getProductsByOrderId(oid);
 	}
 }
